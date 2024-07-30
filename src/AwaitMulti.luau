@@ -1,17 +1,8 @@
 --!optimize 2
 --!strict
 
---# selene: allow(mixed_table)
-
+local PackRest = require(script.Parent.PackRest)
 local Promise = require(script.Parent.Parent.Promise)
-
-local function PackResults<T...>(status: Promise.Status, ...: T...)
-	-- table.pack cringes with typed varargs, so we do this instead.
-	return status, {
-		n = select("#", ...);
-		select(1, ...);
-	}
-end
 
 --[=[
 	The functionality of this is meant to be the same as the `await` keyword in
@@ -23,7 +14,7 @@ end
 			resolve(string.upper(value), string.lower(value))
 		end)
 	end
-	local upper, lower = PromiseUtilities.AwaitMulti(PromiseUpperAndLower("hi"))
+	local upper, lower = PromiseUtilities.AwaitMulti(PromiseUpperAndLower("Hello there!"))
 	```
 
 	:::tip Behavior
@@ -47,7 +38,7 @@ local function AwaitMulti<T...>(...: any): T...
 		return ...
 	end
 
-	local status, values = PackResults(promise:awaitStatus())
+	local status, values = PackRest(promise:awaitStatus())
 	if status == Promise.Status.Resolved then
 		return table.unpack(values, 1, values.n)
 	end
@@ -59,4 +50,7 @@ local function AwaitMulti<T...>(...: any): T...
 	error("The awaited Promise was cancelled", 2)
 end
 
-return AwaitMulti
+type AwaitPromise = <T...>(promise: Promise.TypedPromise<T...>) -> T...
+type AwaitVariadic = <T...>(T...) -> T...
+
+return AwaitMulti :: AwaitPromise & AwaitVariadic
