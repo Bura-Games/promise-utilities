@@ -1,0 +1,15 @@
+{
+	"name": "promise-utilities",
+	"tree": {
+		"$className": "DataModel",
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"$ignoreUnknownInstances": true,
+			"Packages": {
+				"$ignoreUnknownInstances": true,
+				"$path": "Packages",
+				"PromiseUtilities": {"$path": "./default.project.json"}
+			}
+		}
+	}
+}

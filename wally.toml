@@ -1,0 +1,32 @@
+[package]
+name = "howmanysmall/promise-utilities" # TODO: Convert to bura-games organization.
+version = "1.0.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+description = "Utilities related to Promises."
+license = "MIT"
+exclude = [
+	".gitignore",
+	".luaurc",
+	".vscode",
+	".lune",
+	"build",
+	"docs",
+	"*.toml",
+	"rokit.toml",
+	"selene.toml",
+	"sourcemap.json",
+	"stylua.toml",
+	"*.code-workspace",
+	"testez-companion.toml",
+	"testez.yml",
+	"*.yml",
+	"scripts",
+	"Packages",
+	"*.project.json",
+]
+include = ["src", "wally.toml", "default.project.json"]
+
+[dependencies]
+Promise = "howmanysmall/typed-promise@4.0.3"
+ThreadUtilities = "howmanysmall/thread-utilities@1.0.1"

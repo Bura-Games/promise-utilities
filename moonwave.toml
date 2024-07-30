@@ -1,0 +1,14 @@
+gitSourceBranch = "main"
+title = "PromiseUtilities"
+autoSectionPath = "src"
+
+[docusaurus]
+tagline = "Utilities for Promises."
+
+[home]
+enabled = true
+includeReadme = false
+
+# [[home.features]]
+# title = "Immutability"
+# description = "Completely immutable data."
