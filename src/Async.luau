@@ -55,4 +55,16 @@ local function Async<Returns, Arguments...>(callback: (Arguments...) -> Returns)
 	return asyncFunction
 end
 
+--[=[
+	Basically equivalent to [PromiseUtilities.Async], except you are not
+	expected to have any return. This only exists because Luau's type system
+	is not the greatest at handling this.
+
+	@function AsyncVoid
+	@within PromiseUtilities
+
+	@param callback (Arguments...) -> void
+	@return (Arguments...) -> Promise<void>
+]=]
+
 return Async

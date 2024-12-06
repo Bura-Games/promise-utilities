@@ -18,5 +18,5 @@ Using the RepoToRoblox plugin is the easiest way to install in Studio.
 
 ```toml
 [dependencies]
-ThreadUtilities = "howmanysmall/promise-utilities@^1.0.0"
+ThreadUtilities = "howmanysmall/promise-utilities@^1.1.0"
 ```

@@ -1,9 +1,19 @@
+autoSectionPath = "src"
 gitSourceBranch = "main"
 title = "PromiseUtilities"
-autoSectionPath = "src"
 
 [docusaurus]
 tagline = "Utilities for Promises."
+
+[navbar.logo]
+alt = "Bura Logo"
+src = "bura-logo.webp"
+
+[[navbar.items]]
+items = [{ href = "https://eryn.io/roblox-lua-promise/", label = "Promise" }]
+label = "Relevant Docs"
+position = "right"
+type = "dropdown"
 
 [home]
 enabled = true

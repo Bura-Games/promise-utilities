@@ -51,4 +51,16 @@ local function FastAsync<Returns, Arguments...>(callback: (Arguments...) -> Retu
 	return fastAsyncFunction
 end
 
+--[=[
+	Basically equivalent to [PromiseUtilities.FastAsync], except you are not
+	expected to have any return. This only exists because Luau's type system
+	is not the greatest at handling this.
+
+	@function FastAsyncVoid
+	@within PromiseUtilities
+
+	@param callback (Arguments...) -> void
+	@return (Arguments...) -> Promise<void>
+]=]
+
 return FastAsync

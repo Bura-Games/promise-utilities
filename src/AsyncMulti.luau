@@ -1,8 +1,16 @@
 --!optimize 2
 --!strict
 
-local PackRest = require(script.Parent.PackRest)
 local Promise = require(script.Parent.Parent.Promise)
+
+local function PackRest<S, T...>(statusOrSuccess: S, ...: T...)
+	-- table.pack cringes with typed varargs, so we do this instead.
+	-- selene: allow(mixed_table)
+	return statusOrSuccess, {
+		n = select("#", ...);
+		select(1, ...);
+	}
+end
 
 --[=[
 	A function that turns another function into the same as an async function

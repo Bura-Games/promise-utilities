@@ -17,16 +17,20 @@ export type Status = Promise.Status
 export type Promise<T...> = Promise.TypedPromise<T...>
 export type VoidPromise = Promise.Promise
 
+type VoidedAsync = <Arguments...>(callback: (Arguments...) -> ()) -> (Arguments...) -> VoidPromise
+
 --[=[
 	Utilities for working with Promises.
 	@class PromiseUtilities
 ]=]
 local PromiseUtilities = table.freeze({
 	Async = Async;
+	AsyncVoid = (Async :: never) :: VoidedAsync;
 	AsyncMulti = AsyncMulti;
 	Await = Await;
 	AwaitMulti = AwaitMulti;
 	FastAsync = FastAsync;
+	FastAsyncVoid = (FastAsync :: never) :: VoidedAsync;
 	FastAsyncMulti = FastAsyncMulti;
 
 	Promise = Promise;
