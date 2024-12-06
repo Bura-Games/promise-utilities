@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="plugin-moonwave plugin-id-moonwave" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.6.3">
+<title data-rh="true">PromiseUtilities | PromiseUtilities</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://Bura-Games.github.io/promise-utilities/api/PromiseUtilities"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="PromiseUtilities | PromiseUtilities"><meta data-rh="true" name="description" content="Utilities for working with Promises."><meta data-rh="true" property="og:description" content="Utilities for working with Promises."><link data-rh="true" rel="canonical" href="https://Bura-Games.github.io/promise-utilities/api/PromiseUtilities"><link data-rh="true" rel="alternate" href="https://Bura-Games.github.io/promise-utilities/api/PromiseUtilities" hreflang="en"><link data-rh="true" rel="alternate" href="https://Bura-Games.github.io/promise-utilities/api/PromiseUtilities" hreflang="x-default"><link rel="stylesheet" href="/promise-utilities/assets/css/styles.f0e219d2.css">
+<script src="/promise-utilities/assets/js/runtime~main.26433b75.js" defer="defer"></script>
+<script src="/promise-utilities/assets/js/main.8db6c062.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();null!==e?t(e):window.matchMedia("(prefers-color-scheme: dark)").matches?t("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,t("light"))}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/promise-utilities/"><div class="navbar__logo"><img src="/promise-utilities/bura-logo.webp" alt="Bura Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/promise-utilities/bura-logo.webp" alt="Bura Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">PromiseUtilities</b></a><a class="navbar__item navbar__link" href="/promise-utilities/docs/intro">Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/promise-utilities/api/">API</a></div><div class="navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Relevant Docs</a><ul class="dropdown__menu"><li><a href="https://eryn.io/roblox-lua-promise/" target="_blank" rel="noopener noreferrer" class="dropdown__link">Promise<svg width="12" height="12" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><a href="https://github.com/Bura-Games/promise-utilities" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/promise-utilities/api/PromiseUtilities">​Promise​Utilities</a></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Promise</span><span style="display:inline-block">Utilities</span></h1><div class="luaClassTags_EipM"></div><div>
+<p>Utilities for working with Promises.</p>
+</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="FastAsyncMulti"><code style="text-decoration:none">FastAsyncMulti</code><a href="#FastAsyncMulti" class="hash-link" aria-label="Direct link to FastAsyncMulti" title="Direct link to FastAsyncMulti">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/promise-utilities/blob/main/src/FastAsyncMulti.luau#L42"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>PromiseUtilities<!-- -->.</code><code class="green_DgR4">FastAsyncMulti</code><code>(</code><code>callback<!-- -->: </code><code class="purple_ieR2">(</code><code class="blue_P4bS">Arguments...</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">Returns...</code><code>) → </code><code class="purple_ieR2">(</code><code class="blue_P4bS">Arguments...</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">Promise</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">Returns...</code><code class="op_lSLc">&gt;</code></div><div>
+<p>
+  A function that turns another function into the same as an async function
+  in ECMAScript. This supports multiple returns however.
+</p>
+<pre class="language-ts"><code class="language-ts"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">promiseUpperAndLower</span><span class="token punctuation">(</span>value<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword control-flow">return</span> <span class="token punctuation">[</span>value<span class="token punctuation">.</span><span class="token method function property-access">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> value<span class="token punctuation">.</span><span class="token method function property-access">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>would basically be equivalent to:</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> <span class="token keyword">function</span> <span class="token function">GetUpperAndLowerAsync</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> string<span class="token punctuation">)</span>
+	<span class="token keyword">return</span> string<span class="token punctuation">.</span><span class="token function">upper</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">,</span> string<span class="token punctuation">.</span><span class="token function">lower</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">local</span> PromiseUpperAndLower <span class="token operator">=</span> PromiseUtilities<span class="token punctuation">.</span><span class="token function">FastAsyncMulti</span><span class="token punctuation">(</span>GetUpperAndLowerAsync<span class="token punctuation">)</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Async"><code style="text-decoration:none">Async</code><a href="#Async" class="hash-link" aria-label="Direct link to Async" title="Direct link to Async">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/promise-utilities/blob/main/src/Async.luau#L38"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>PromiseUtilities<!-- -->.</code><code class="green_DgR4">Async</code><code>(</code><code>callback<!-- -->: </code><code class="purple_ieR2">(</code><code class="blue_P4bS">Arguments...</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">Returns</code><code>) → </code><code class="purple_ieR2">(</code><code class="blue_P4bS">Arguments...</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">Promise</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">Returns</code><code class="op_lSLc">&gt;</code></div><div>
+<p>
+  A function that turns another function into the same as an async function
+  in ECMAScript. This was taken from <a href="https://github.com/roblox-ts/roblox-ts/blob/master/include/RuntimeLib.lua">here</a>.
+</p>
+<pre class="language-ts"><code class="language-ts"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">promiseGet</span><span class="token punctuation">(</span>url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword control-flow">return</span> <span class="token maybe-class-name">HttpService</span><span class="token punctuation">.</span><span class="token method function property-access"><span class="token maybe-class-name">GetAsync</span></span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>would basically be equivalent to:</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> <span class="token keyword">function</span> <span class="token function">GetAsync</span><span class="token punctuation">(</span>url<span class="token punctuation">:</span> string<span class="token punctuation">)</span>
+	<span class="token keyword">return</span> HttpService<span class="token punctuation">:</span><span class="token function">GetAsync</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">local</span> PromiseGet <span class="token operator">=</span> PromiseUtilities<span class="token punctuation">.</span><span class="token function">Async</span><span class="token punctuation">(</span>GetAsync<span class="token punctuation">)</span>
+</code></pre>
+
+  
+    
+    
+      <div class="admonition admonition-info alert alert--info">
+        <div class="admonition-heading">
+          <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16">
+                <path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path>
+              </svg></span><span class="admonition-title">INFO</span></h5>
+        </div>
+        <div class="admonition-content">
+          <p>
+            This is meant to be entirely equivalent to the TypeScript version. I would
+            recommend using <a href="/promise-utilities/api/PromiseUtilities#FastAsync">PromiseUtilities.FastAsync</a> instead for better
+            performance.
+          </p>
+        </div>
+      </div>
+    
+  
+
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="AsyncVoid"><code style="text-decoration:none">AsyncVoid</code><a href="#AsyncVoid" class="hash-link" aria-label="Direct link to AsyncVoid" title="Direct link to AsyncVoid">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/promise-utilities/blob/main/src/Async.luau#L69"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>PromiseUtilities<!-- -->.</code><code class="green_DgR4">AsyncVoid</code><code>(</code><code>callback<!-- -->: </code><code class="purple_ieR2">(</code><code class="blue_P4bS">Arguments...</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">void</code><code>) → </code><code class="purple_ieR2">(</code><code class="blue_P4bS">Arguments...</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">Promise</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">void</code><code class="op_lSLc">&gt;</code></div><div>
+<p>
+  Basically equivalent to <a href="/promise-utilities/api/PromiseUtilities#Async">PromiseUtilities.Async</a>, except you are not
+  expected to have any return. This only exists because Luau's type system
+  is not the greatest at handling this.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="AsyncMulti"><code style="text-decoration:none">AsyncMulti</code><a href="#AsyncMulti" class="hash-link" aria-label="Direct link to AsyncMulti" title="Direct link to AsyncMulti">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/promise-utilities/blob/main/src/AsyncMulti.luau#L47"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>PromiseUtilities<!-- -->.</code><code class="green_DgR4">AsyncMulti</code><code>(</code><code>callback<!-- -->: </code><code class="purple_ieR2">(</code><code class="blue_P4bS">Arguments...</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">Returns...</code><code>) → </code><code class="purple_ieR2">(</code><code class="blue_P4bS">Arguments...</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">Promise</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">Returns...</code><code class="op_lSLc">&gt;</code></div><div>
+<p>
+  A function that turns another function into the same as an async function
+  in ECMAScript. This supports multiple returns however.
+</p>
+<pre class="language-ts"><code class="language-ts"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">promiseUpperAndLower</span><span class="token punctuation">(</span>value<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword control-flow">return</span> <span class="token punctuation">[</span>value<span class="token punctuation">.</span><span class="token method function property-access">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> value<span class="token punctuation">.</span><span class="token method function property-access">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>would basically be equivalent to:</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> <span class="token keyword">function</span> <span class="token function">GetUpperAndLowerAsync</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> string<span class="token punctuation">)</span>
+	<span class="token keyword">return</span> string<span class="token punctuation">.</span><span class="token function">upper</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">,</span> string<span class="token punctuation">.</span><span class="token function">lower</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">local</span> PromiseUpperAndLower <span class="token operator">=</span> PromiseUtilities<span class="token punctuation">.</span><span class="token function">AsyncMulti</span><span class="token punctuation">(</span>GetUpperAndLowerAsync<span class="token punctuation">)</span>
+</code></pre>
+
+  
+    
+    
+      <div class="admonition admonition-info alert alert--info">
+        <div class="admonition-heading">
+          <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16">
+                <path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path>
+              </svg></span><span class="admonition-title">INFO</span></h5>
+        </div>
+        <div class="admonition-content">
+          <p>
+            This is meant to be entirely equivalent to the TypeScript version. I would
+            recommend using <a href="/promise-utilities/api/PromiseUtilities#FastAsyncMulti">PromiseUtilities.FastAsyncMulti</a> instead for better
+            performance.
+          </p>
+        </div>
+      </div>
+    
+  
+
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="FastAsync"><code style="text-decoration:none">FastAsync</code><a href="#FastAsync" class="hash-link" aria-label="Direct link to FastAsync" title="Direct link to FastAsync">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/promise-utilities/blob/main/src/FastAsync.luau#L34"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>PromiseUtilities<!-- -->.</code><code class="green_DgR4">FastAsync</code><code>(</code><code>callback<!-- -->: </code><code class="purple_ieR2">(</code><code class="blue_P4bS">Arguments...</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">Returns</code><code>) → </code><code class="purple_ieR2">(</code><code class="blue_P4bS">Arguments...</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">Promise</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">Returns</code><code class="op_lSLc">&gt;</code></div><div>
+<p>
+  A function that turns another function into the same as an async function
+  in ECMAScript. This uses a thread recycling "fast spawn" function instead
+  of <code>coroutine.wrap</code>.
+</p>
+<pre class="language-ts"><code class="language-ts"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">promiseGet</span><span class="token punctuation">(</span>url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword control-flow">return</span> <span class="token maybe-class-name">HttpService</span><span class="token punctuation">.</span><span class="token method function property-access"><span class="token maybe-class-name">GetAsync</span></span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>would basically be equivalent to:</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> <span class="token keyword">function</span> <span class="token function">GetAsync</span><span class="token punctuation">(</span>url<span class="token punctuation">:</span> string<span class="token punctuation">)</span>
+	<span class="token keyword">return</span> HttpService<span class="token punctuation">:</span><span class="token function">GetAsync</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">local</span> PromiseGet <span class="token operator">=</span> PromiseUtilities<span class="token punctuation">.</span><span class="token function">FastAsync</span><span class="token punctuation">(</span>GetAsync<span class="token punctuation">)</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="FastAsyncVoid"><code style="text-decoration:none">FastAsyncVoid</code><a href="#FastAsyncVoid" class="hash-link" aria-label="Direct link to FastAsyncVoid" title="Direct link to FastAsyncVoid">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/promise-utilities/blob/main/src/FastAsync.luau#L65"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>PromiseUtilities<!-- -->.</code><code class="green_DgR4">FastAsyncVoid</code><code>(</code><code>callback<!-- -->: </code><code class="purple_ieR2">(</code><code class="blue_P4bS">Arguments...</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">void</code><code>) → </code><code class="purple_ieR2">(</code><code class="blue_P4bS">Arguments...</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">Promise</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">void</code><code class="op_lSLc">&gt;</code></div><div>
+<p>
+  Basically equivalent to <a href="/promise-utilities/api/PromiseUtilities#FastAsync">PromiseUtilities.FastAsync</a>, except you are not
+  expected to have any return. This only exists because Luau's type system
+  is not the greatest at handling this.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="AwaitMulti"><code style="text-decoration:none">AwaitMulti</code><a href="#AwaitMulti" class="hash-link" aria-label="Direct link to AwaitMulti" title="Direct link to AwaitMulti">​</a></h3><span class="badge_Ba2I" style="color:#f1c40f"><span class="badgeTooltip_cWXP">This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#f1c40f" role="img" aria-label="This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts."><path d="M96.4 11.9c-1.4-2.5-4-4-6.9-4H10.8c-2.9 0-5.4 1.5-6.9 4-1.4 2.5-1.4 5.5 0 7.9L43.3 88c1.4 2.5 4 4 6.9 4 2.9 0 5.4-1.5 6.9-4l39.3-68.2c1.4-2.4 1.4-5.4 0-7.9zM46.3 54.5c1.1-1.1 2.3-1.6 3.8-1.6s2.8.5 3.8 1.6c1.1 1.1 1.6 2.3 1.6 3.8s-.5 2.8-1.6 3.8c-1.1 1.1-2.3 1.6-3.8 1.6s-2.8-.5-3.8-1.6c-1.1-1.1-1.6-2.3-1.6-3.8.1-1.5.6-2.8 1.6-3.8zm-.5-4.9V21.8h8.8v27.8h-8.8z"></path></svg> <!-- -->Yields</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/promise-utilities/blob/main/src/AwaitMulti.luau#L43"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>PromiseUtilities<!-- -->.</code><code class="green_DgR4">AwaitMulti</code><code>(</code><code>...<!-- -->: </code><code class="blue_P4bS">T</code><code class="op_lSLc"> | </code><code class="blue_P4bS">Promise</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">T...</code><code class="op_lSLc">&gt;</code><code>) → </code><code class="blue_P4bS">T</code></div><div>
+<p>
+  The functionality of this is meant to be the same as the <code>await</code> keyword in
+  ECMAScript. This allows returning multiple values!
+</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> <span class="token keyword">function</span> <span class="token function">PromiseUpperAndLower</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> string<span class="token punctuation">)</span><span class="token punctuation">:</span> Promise<span class="token operator">&#x3C;</span>string<span class="token punctuation">,</span> string<span class="token operator">></span>
+	<span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>resolve<span class="token punctuation">)</span>
+		<span class="token function">resolve</span><span class="token punctuation">(</span>string<span class="token punctuation">.</span><span class="token function">upper</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">,</span> string<span class="token punctuation">.</span><span class="token function">lower</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">end</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+<span class="token keyword">local</span> upper<span class="token punctuation">,</span> lower <span class="token operator">=</span> PromiseUtilities<span class="token punctuation">.</span><span class="token function">AwaitMulti</span><span class="token punctuation">(</span><span class="token function">PromiseUpperAndLower</span><span class="token punctuation">(</span><span class="token string">"Hello there!"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+
+  
+    
+    
+      <div class="admonition admonition-success alert alert--success">
+        <div class="admonition-heading">
+          <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+                <path d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path>
+              </svg></span><span class="admonition-title">Behavior</span></h5>
+        </div>
+        <div class="admonition-content">
+          <p>
+            This function is almost entirely identical to <code>Promise.expect</code>. You can
+            probably just use that instead!
+          </p>
+        </div>
+      </div>
+    
+  
+
+</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>CancelledError</td><td>Thrown if the Promise was cancelled.</td></tr><tr><td>RejectedError</td><td>Thrown if the Promise was rejected.</td></tr></tbody></table><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Await"><code style="text-decoration:none">Await</code><a href="#Await" class="hash-link" aria-label="Direct link to Await" title="Direct link to Await">​</a></h3><span class="badge_Ba2I" style="color:#f1c40f"><span class="badgeTooltip_cWXP">This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#f1c40f" role="img" aria-label="This is a yielding function. When called, it will pause the Lua thread that called the function until a result is ready to be returned, without interrupting other scripts."><path d="M96.4 11.9c-1.4-2.5-4-4-6.9-4H10.8c-2.9 0-5.4 1.5-6.9 4-1.4 2.5-1.4 5.5 0 7.9L43.3 88c1.4 2.5 4 4 6.9 4 2.9 0 5.4-1.5 6.9-4l39.3-68.2c1.4-2.4 1.4-5.4 0-7.9zM46.3 54.5c1.1-1.1 2.3-1.6 3.8-1.6s2.8.5 3.8 1.6c1.1 1.1 1.6 2.3 1.6 3.8s-.5 2.8-1.6 3.8c-1.1 1.1-2.3 1.6-3.8 1.6s-2.8-.5-3.8-1.6c-1.1-1.1-1.6-2.3-1.6-3.8.1-1.5.6-2.8 1.6-3.8zm-.5-4.9V21.8h8.8v27.8h-8.8z"></path></svg> <!-- -->Yields</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/promise-utilities/blob/main/src/Await.luau#L43"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>PromiseUtilities<!-- -->.</code><code class="green_DgR4">Await</code><code>(</code><code>promiseOrValue<!-- -->: </code><code class="blue_P4bS">Promise</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">T</code><code class="op_lSLc">&gt;</code><code class="op_lSLc"> | </code><code class="blue_P4bS">T</code><code>) → </code><code class="blue_P4bS">T</code></div><div>
+<p>
+  The functionality of this is meant to be the same as the <code>await</code> keyword in
+  ECMAScript.
+</p>
+<pre class="language-ts"><code class="language-ts"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">promiseGet</span><span class="token punctuation">(</span>url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword control-flow">return</span> <span class="token maybe-class-name">HttpService</span><span class="token punctuation">.</span><span class="token method function property-access"><span class="token maybe-class-name">GetAsync</span></span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">promiseGet</span><span class="token punctuation">(</span><span class="token string">"https://example.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class="language-lua"><code class="language-lua"><span class="token comment">-- This is good practice - you don't really lose debug info this way.</span>
+<span class="token keyword">local</span> <span class="token keyword">function</span> <span class="token function">GetAsync</span><span class="token punctuation">(</span>url<span class="token punctuation">:</span> string<span class="token punctuation">)</span>
+	<span class="token keyword">return</span> HttpService<span class="token punctuation">:</span><span class="token function">GetAsync</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">local</span> PromiseGet <span class="token operator">=</span> PromiseUtilities<span class="token punctuation">.</span><span class="token function">FastAsync</span><span class="token punctuation">(</span>GetAsync<span class="token punctuation">)</span>
+<span class="token keyword">local</span> result <span class="token operator">=</span> PromiseUtilities<span class="token punctuation">.</span><span class="token function">Await</span><span class="token punctuation">(</span><span class="token function">PromiseGet</span><span class="token punctuation">(</span><span class="token string">"https://example.com"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+
+  
+    
+    
+      <div class="admonition admonition-success alert alert--success">
+        <div class="admonition-heading">
+          <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+                <path d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path>
+              </svg></span><span class="admonition-title">Behavior</span></h5>
+        </div>
+        <div class="admonition-content">
+          <p>
+            This function is almost entirely identical to <code>Promise.expect</code>. You can
+            probably just use that instead!
+          </p>
+        </div>
+      </div>
+    
+  
+
+</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>CancelledError</td><td>Thrown if the Promise was cancelled.</td></tr><tr><td>RejectedError</td><td>Thrown if the Promise was rejected.</td></tr></tbody></table></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
+    &quot;functions&quot;: [
+        {
+            &quot;name&quot;: &quot;FastAsyncMulti&quot;,
+            &quot;desc&quot;: &quot;A function that turns another function into the same as an async function\nin ECMAScript. This supports multiple returns however.\n\n```ts\nasync function promiseUpperAndLower(value: string) {\n\treturn [value.toUpperCase(), value.toLowerCase()];\n}\n```\n\nwould basically be equivalent to:\n\n```lua\nlocal function GetUpperAndLowerAsync(value: string)\n\treturn string.upper(value), string.lower(value)\nend\n\nlocal PromiseUpperAndLower = PromiseUtilities.FastAsyncMulti(GetUpperAndLowerAsync)\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;callback&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(Arguments...) -&gt; Returns...&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(Arguments...) -&gt; Promise&lt;Returns...&gt;&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 42,
+                &quot;path&quot;: &quot;src/FastAsyncMulti.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Async&quot;,
+            &quot;desc&quot;: &quot;A function that turns another function into the same as an async function\nin ECMAScript. This was taken from [here](https://github.com/roblox-ts/roblox-ts/blob/master/include/RuntimeLib.lua).\n\n```ts\nasync function promiseGet(url: string) {\n\treturn HttpService.GetAsync(url);\n}\n```\n\nwould basically be equivalent to:\n\n```lua\nlocal function GetAsync(url: string)\n\treturn HttpService:GetAsync(url)\nend\n\nlocal PromiseGet = PromiseUtilities.Async(GetAsync)\n```\n\n:::info\nThis is meant to be entirely equivalent to the TypeScript version. I would\nrecommend using [PromiseUtilities.FastAsync] instead for better\nperformance.\n:::&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;callback&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(Arguments...) -&gt; Returns&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(Arguments...) -&gt; Promise&lt;Returns&gt;&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 38,
+                &quot;path&quot;: &quot;src/Async.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;AsyncVoid&quot;,
+            &quot;desc&quot;: &quot;Basically equivalent to [PromiseUtilities.Async], except you are not\nexpected to have any return. This only exists because Luau&#x27;s type system\nis not the greatest at handling this.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;callback&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(Arguments...) -&gt; void&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(Arguments...) -&gt; Promise&lt;void&gt;&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 69,
+                &quot;path&quot;: &quot;src/Async.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;AsyncMulti&quot;,
+            &quot;desc&quot;: &quot;A function that turns another function into the same as an async function\nin ECMAScript. This supports multiple returns however.\n\n```ts\nasync function promiseUpperAndLower(value: string) {\n\treturn [value.toUpperCase(), value.toLowerCase()];\n}\n```\n\nwould basically be equivalent to:\n\n```lua\nlocal function GetUpperAndLowerAsync(value: string)\n\treturn string.upper(value), string.lower(value)\nend\n\nlocal PromiseUpperAndLower = PromiseUtilities.AsyncMulti(GetUpperAndLowerAsync)\n```\n\n:::info\nThis is meant to be entirely equivalent to the TypeScript version. I would\nrecommend using [PromiseUtilities.FastAsyncMulti] instead for better\nperformance.\n:::&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;callback&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(Arguments...) -&gt; Returns...&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(Arguments...) -&gt; Promise&lt;Returns...&gt;&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 47,
+                &quot;path&quot;: &quot;src/AsyncMulti.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;FastAsync&quot;,
+            &quot;desc&quot;: &quot;A function that turns another function into the same as an async function\nin ECMAScript. This uses a thread recycling \&quot;fast spawn\&quot; function instead\nof `coroutine.wrap`.\n\n```ts\nasync function promiseGet(url: string) {\n\treturn HttpService.GetAsync(url);\n}\n```\n\nwould basically be equivalent to:\n\n```lua\nlocal function GetAsync(url: string)\n\treturn HttpService:GetAsync(url)\nend\n\nlocal PromiseGet = PromiseUtilities.FastAsync(GetAsync)\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;callback&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(Arguments...) -&gt; Returns&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(Arguments...) -&gt; Promise&lt;Returns&gt;&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 34,
+                &quot;path&quot;: &quot;src/FastAsync.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;FastAsyncVoid&quot;,
+            &quot;desc&quot;: &quot;Basically equivalent to [PromiseUtilities.FastAsync], except you are not\nexpected to have any return. This only exists because Luau&#x27;s type system\nis not the greatest at handling this.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;callback&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(Arguments...) -&gt; void&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(Arguments...) -&gt; Promise&lt;void&gt;&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 65,
+                &quot;path&quot;: &quot;src/FastAsync.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;AwaitMulti&quot;,
+            &quot;desc&quot;: &quot;The functionality of this is meant to be the same as the `await` keyword in\nECMAScript. This allows returning multiple values!\n\n```lua\nlocal function PromiseUpperAndLower(value: string): Promise&lt;string, string&gt;\n\treturn Promise.new(function(resolve)\n\t\tresolve(string.upper(value), string.lower(value))\n\tend)\nend\nlocal upper, lower = PromiseUtilities.AwaitMulti(PromiseUpperAndLower(\&quot;Hello there!\&quot;))\n```\n\n:::tip Behavior\nThis function is almost entirely identical to `Promise.expect`. You can\nprobably just use that instead!\n:::&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;...&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;T | Promise&lt;T...&gt;&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;errors&quot;: [
+                {
+                    &quot;lua_type&quot;: &quot;CancelledError&quot;,
+                    &quot;desc&quot;: &quot;Thrown if the Promise was cancelled.&quot;
+                },
+                {
+                    &quot;lua_type&quot;: &quot;RejectedError&quot;,
+                    &quot;desc&quot;: &quot;Thrown if the Promise was rejected.&quot;
+                }
+            ],
+            &quot;yields&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 43,
+                &quot;path&quot;: &quot;src/AwaitMulti.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Await&quot;,
+            &quot;desc&quot;: &quot;The functionality of this is meant to be the same as the `await` keyword in\nECMAScript.\n\n```ts\nasync function promiseGet(url: string) {\n\treturn HttpService.GetAsync(url);\n}\n\nconst result = await promiseGet(\&quot;https://example.com\&quot;);\n```\n\n```lua\n-- This is good practice - you don&#x27;t really lose debug info this way.\nlocal function GetAsync(url: string)\n\treturn HttpService:GetAsync(url)\nend\n\nlocal PromiseGet = PromiseUtilities.FastAsync(GetAsync)\nlocal result = PromiseUtilities.Await(PromiseGet(\&quot;https://example.com\&quot;))\n```\n\n:::tip Behavior\nThis function is almost entirely identical to `Promise.expect`. You can\nprobably just use that instead!\n:::&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;promiseOrValue&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Promise&lt;T&gt; | T&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;errors&quot;: [
+                {
+                    &quot;lua_type&quot;: &quot;CancelledError&quot;,
+                    &quot;desc&quot;: &quot;Thrown if the Promise was cancelled.&quot;
+                },
+                {
+                    &quot;lua_type&quot;: &quot;RejectedError&quot;,
+                    &quot;desc&quot;: &quot;Thrown if the Promise was rejected.&quot;
+                }
+            ],
+            &quot;yields&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 43,
+                &quot;path&quot;: &quot;src/Await.luau&quot;
+            }
+        }
+    ],
+    &quot;properties&quot;: [],
+    &quot;types&quot;: [],
+    &quot;name&quot;: &quot;PromiseUtilities&quot;,
+    &quot;desc&quot;: &quot;Utilities for working with Promises.&quot;,
+    &quot;source&quot;: {
+        &quot;line&quot;: 26,
+        &quot;path&quot;: &quot;src/init.luau&quot;
+    }
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Async" class="table-of-contents__link toc-highlight">.Async</a></li><li><a href="#AsyncMulti" class="table-of-contents__link toc-highlight">.AsyncMulti</a></li><li><a href="#AsyncVoid" class="table-of-contents__link toc-highlight">.AsyncVoid</a></li><li><a href="#Await" class="table-of-contents__link toc-highlight">.Await</a></li><li><a href="#AwaitMulti" class="table-of-contents__link toc-highlight">.AwaitMulti</a></li><li><a href="#FastAsync" class="table-of-contents__link toc-highlight">.FastAsync</a></li><li><a href="#FastAsyncMulti" class="table-of-contents__link toc-highlight">.FastAsyncMulti</a></li><li><a href="#FastAsyncVoid" class="table-of-contents__link toc-highlight">.FastAsyncVoid</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 Bura-Games. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[702],{4410:s=>{s.exports=JSON.parse('{"sourceUrl":"https://github.com/Bura-Games/promise-utilities/blob/main","baseUrl":"/promise-utilities/","classOrder":[],"apiCategories":[]}')}}]);
